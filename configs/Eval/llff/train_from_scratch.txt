@@ -1,5 +1,5 @@
 ### INPUT
-expname = eval_llff_mypretrain
+expname = eval_llff_train_from_scratch
 rootdir = /scratch/gilbreth/sheng30/NeRF/IBRNet/  # REPLACE THIS with YOUR PATH.
 ckpt_path = /scratch/gilbreth/sheng30/NeRF/IBRNet/out/pretraining/model_250000.pth   # REPLACE THIS with YOUR PATH.
 distributed = False

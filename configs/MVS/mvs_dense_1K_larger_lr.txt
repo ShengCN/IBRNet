@@ -1,25 +1,39 @@
 ### INPUT
-expname = pretraining
+expname = MVS_Dense_1K_larger_lr
 rootdir = /scratch/gilbreth/sheng30/NeRF/IBRNet/  # REPLACE THIS with YOUR PATH.
 render_stride = 2
 # distributed = True
 distributed = False 
 
+ckpt_path = /scratch/gilbreth/sheng30/NeRF/IBRNet/out/MVS_Dense_1K/model_196000.pth
+no_load_opt = True
+no_load_scheduler = True
+
+# n_iters = 60000
+
 ## dataset
 # train_dataset = llff+spaces+ibrnet_collected+realestate+google_scanned
 #dataset_weights = [0.3, 0.15, 0.35, 0.15, 0.05]
 
-train_dataset = llff+spaces+ibrnet_collected+realestate
+train_dataset = MVS
 dataset_weights = [0.3, 0.15, 0.35, 0.2]
 eval_dataset = llff_test
 eval_scenes = [trex, fern, flower, leaves, room, fortress, horns, orchids]
 
+exp_name = 'MVS_Dense_1K'
+NN = 'dist'
+num_source_views = 10
+
 ### TRAINING
 N_rand = 500
+# N_rand = 8000
+chunk_size = 9192 
+
 lrate_feature = 0.001
 lrate_mlp = 0.0005
 lrate_decay_factor = 0.5
-lrate_decay_steps = 50000
+lrate_decay_steps = 100000
+n_iters = 500000
 
 ### TESTING
 chunk_size = 2000
@@ -31,6 +45,8 @@ inv_uniform = True
 white_bkgd = False
 
 ### CONSOLE AND TENSORBOARD
-i_img = 2000
+i_img = 1000
+# i_img = 500
 i_print = 100
-i_weights = 5000
+# i_weights = 5000
+i_weights = 500

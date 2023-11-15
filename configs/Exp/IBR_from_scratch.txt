@@ -1,5 +1,6 @@
 ### INPUT
-expname = pretraining
+expname = IBR_from_scratch 
+
 rootdir = /scratch/gilbreth/sheng30/NeRF/IBRNet/  # REPLACE THIS with YOUR PATH.
 render_stride = 2
 # distributed = True
@@ -9,10 +10,12 @@ distributed = False
 # train_dataset = llff+spaces+ibrnet_collected+realestate+google_scanned
 #dataset_weights = [0.3, 0.15, 0.35, 0.15, 0.05]
 
-train_dataset = llff+spaces+ibrnet_collected+realestate
-dataset_weights = [0.3, 0.15, 0.35, 0.2]
+train_dataset = spaces+ibrnet_collected+realestate
+dataset_weights = [0.3, 0.4, 0.3]
 eval_dataset = llff_test
 eval_scenes = [trex, fern, flower, leaves, room, fortress, horns, orchids]
+n_iters = 250000 
+num_source_views = 10
 
 ### TRAINING
 N_rand = 500
